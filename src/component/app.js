@@ -9,12 +9,17 @@ class App extends React.Component {
         this.state = {
             tweets: ["abc", "abc12", "ab1c", "11abc", 'aaxx']
         }
+        this.handleSend = this.handleSend.bind(this);
+    }
+    handleSend(tweet) {
+        this.setState({ tweets: [...this.state.tweets, tweet] });
     }
     render() {
+        const tweets = [...this.state.tweets];
         return (
             <div>
-                <TweetList tweets={this.state.tweets}></TweetList>
-                <SendTweet></SendTweet>
+                <TweetList tweets={tweets}></TweetList>
+                <SendTweet handleSend={this.handleSend}></SendTweet>
             </div>
         );
     }
