@@ -13,6 +13,9 @@ export default {
         publicPath: '/',
         filename: 'bundle.js'
     },
+    plugins: [
+        new webpack.HotModuleReplacementPlugin()
+    ],
     devServer: {
         contentBase: path.resolve(__dirname, 'src')
     },
@@ -22,7 +25,10 @@ export default {
                 test: /\.js$/,
                 exclude: path.join(__dirname, 'node_modules'),
                 include: path.join(__dirname, 'src'),
-                use: 'babel-loader',
+                use: 'babel-loader'
+            },
+            {
+                test: /\.css$/, use: ['style-loader', 'css-loader']
             }
         ]
     }

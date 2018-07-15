@@ -14,12 +14,14 @@ app.use(require('webpack-dev-middleware')(compiler, {
   publicPath: config.output.publicPath
 }));
 
+app.use(require('webpack-hot-middleware')(compiler));
 
-app.get('*', function(req, res) {
+
+app.get('*', function (req, res) {
   res.sendFile(path.join(__dirname, '../src/index.html'));
 });
 
-app.listen(port, function(err) {
+app.listen(port, function (err) {
   if (err) {
     console.log(err);
   } else {
