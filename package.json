@@ -1,0 +1,35 @@
+{
+  "name": "twitter-splitter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "babel-node server/dev-server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/mohbasheer/twitter-splitter.git"
+  },
+  "author": "Mohammed Basheer <ssp.basheer@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/mohbasheer/twitter-splitter/issues"
+  },
+  "homepage": "https://gitlab.com/mohbasheer/twitter-splitter#README",
+  "dependencies": {
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "express": "^4.16.3",
+    "open": "0.0.5",
+    "webpack": "^4.16.0",
+    "webpack-dev-middleware": "^3.1.3"
+  }
+}
