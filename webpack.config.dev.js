@@ -5,6 +5,7 @@ export default {
     mode: 'development',
     devtool: 'inline-source-map',
     entry: [
+        'webpack-hot-middleware/client?reload=true',
         path.resolve(__dirname, 'src/index')
     ],
     target: 'web',

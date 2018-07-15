@@ -1,8 +1,10 @@
+import 'babel-polyfill';
 import React from 'react';
 import { render } from 'react-dom';
+import App from './component/app';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 render(
-    <div className="alert alert-primary">Main</div>,
+    <App></App>,
     document.getElementById('app')
 );
