@@ -1,5 +1,7 @@
 import React from 'react';
 import TweetList from './tweet-list/tweet-list';
+import SendTweet from './send-tweet/send-tweet';
+import './app.css';
 
 class App extends React.Component {
     constructor() {
@@ -10,7 +12,10 @@ class App extends React.Component {
     }
     render() {
         return (
-            <TweetList tweets={this.state.tweets}></TweetList>
+            <div>
+                <TweetList tweets={this.state.tweets}></TweetList>
+                <SendTweet></SendTweet>
+            </div>
         );
     }
 }

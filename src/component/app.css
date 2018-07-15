@@ -1,0 +1,12 @@
+body{
+    display: flex;
+    justify-content: center;
+}
+
+.tweet-List {
+    width: 400px;
+}
+
+.send-tweet {
+    height:80px;
+}
