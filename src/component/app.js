@@ -9,9 +9,9 @@ class App extends React.Component {
         this.state = {
             tweets: ["abc", "abc12", "ab1c", "11abc", 'aaxx']
         }
-        this.handleSend = this.handleSend.bind(this);
+        this.handlePost = this.handlePost.bind(this);
     }
-    handleSend(tweet) {
+    handlePost(tweet) {
         this.setState({ tweets: [...this.state.tweets, tweet] });
     }
     render() {
@@ -19,7 +19,7 @@ class App extends React.Component {
         return (
             <div>
                 <TweetList tweets={tweets}></TweetList>
-                <PostTweet handleSend={this.handleSend}></PostTweet>
+                <PostTweet handlePost={this.handlePost}></PostTweet>
             </div>
         );
     }

@@ -28,7 +28,7 @@ class PostTweet extends React.Component {
         this.validateTweetMessage();
     }
     handlePost() {
-        this.props.handleSend(this.state.tweet);
+        this.props.handlePost(this.state.tweet);
         this.setState({ tweet: '' });
     }
     getErrorMessage() {
@@ -54,7 +54,7 @@ class PostTweet extends React.Component {
 }
 
 PostTweet.propTypes = {
-    handleSend: PropTypes.func.isRequired
+    handlePost: PropTypes.func.isRequired
 }
 
 export default PostTweet;
