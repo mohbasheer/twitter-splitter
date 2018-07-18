@@ -1,6 +1,6 @@
 import React from 'react';
 import TweetList from './tweet-list/tweet-list';
-import SendTweet from './send-tweet/send-tweet';
+import PostTweet from './post-tweet/post-tweet';
 import './app.css';
 
 class App extends React.Component {
@@ -19,7 +19,7 @@ class App extends React.Component {
         return (
             <div>
                 <TweetList tweets={tweets}></TweetList>
-                <SendTweet handleSend={this.handleSend}></SendTweet>
+                <PostTweet handleSend={this.handleSend}></PostTweet>
             </div>
         );
     }
