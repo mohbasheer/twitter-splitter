@@ -5,6 +5,7 @@ body{
 
 .tweet-List {
     width: 400px;
+    white-space: pre-wrap;
 }
 
 .send-tweet {
