@@ -1,7 +1,9 @@
 import React from 'react';
 import TweetError from './tweet-error';
 import PropTypes from 'prop-types';
+import { getSplittedChunks } from './splitter';
 import { MAX_WORD_LENGTH } from './constant';
+
 
 class PostTweet extends React.Component {
     constructor() {
@@ -23,46 +25,12 @@ class PostTweet extends React.Component {
             )
         });
     }
-    /**
-     * 
-     * @param {*} noOfChunks 
-     * Example:
-     * noOfChunks = 20
-     * max part indicator will be ==> '20/20 '
-     * so length of '20/20 ' ==> 6
-     */
-    getMaxPartIndicatorLength(noOfChunks) {
-        return String(noOfChunks).length + 2;
-    }
-    /**
-     * 
-     * @param {*} maxWordLength 
-     * @param {*} partIndicatorLength 
-     * will return final number of chunks to post
-     */
-    getNoOfChunks(maxWordLength, partIndicatorLength) {
-        let tweetList = this.state.tweet.split(' ');
-        let noOfChunks = 0, count = 0;
-        tweetList.forEach(tweet => {
-            count = count + tweet.length;
-            if (count >= maxWordLength) {
-                noOfChunks++;
-                count = 0;
-            }
-        });
-
-        let newPartIndicatorLength = this.getMaxPartIndicatorLength(noOfChunks);
-        if (newPartIndicatorLength !== partIndicatorLength) {
-            this.getNoOfChunks(maxWordLength - newPartIndicatorLength, newPartIndicatorLength);
-        }
-        return noOfChunks;
-    }
     handleChange(event) {
         this.setState({ tweet: event.target.value });
         this.validateTweetMessage();
     }
     handlePost() {
-        this.props.handlePost(this.state.tweet);
+        this.props.handlePost(getSplittedChunks(this.state.tweet, MAX_WORD_LENGTH));
         this.setState({ tweet: '' });
     }
     getErrorMessage() {

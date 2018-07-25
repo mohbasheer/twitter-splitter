@@ -12,7 +12,7 @@ class App extends React.Component {
         this.handlePost = this.handlePost.bind(this);
     }
     handlePost(tweet) {
-        this.setState({ tweets: [...this.state.tweets, tweet] });
+        this.setState({ tweets: [...this.state.tweets, ...tweet] });
     }
     render() {
         const tweets = [...this.state.tweets];
