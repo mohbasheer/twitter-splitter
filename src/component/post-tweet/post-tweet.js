@@ -44,7 +44,7 @@ class PostTweet extends React.Component {
         return (
             <div className="fixed-bottom">
                 <TweetError error={this.getErrorMessage()}></TweetError>
-                <div className="input-group mb-3 send-tweet">
+                <div className="input-group send-tweet">
                     <textarea className="form-control" onChange={this.handleChange} value={this.state.tweet} />
                     <div className="input-group-append">
                         <button disabled={!this.isPostValid()} onClick={this.handlePost}

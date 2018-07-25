@@ -71,8 +71,9 @@ it('test getSplittedChunks with bigger data', () => {
       from React.On September 23, 2017, Facebook announced that the following week, 
       it would re-license Flow, Jest, React, and Immutable.js under a standard MIT License; the company stated that React was 
       "the foundation of a broad ecosystem of open source software for the web", and that 
-      they did not want to "hold back forward progress for nontechnical reasons.`,
-        splittedList = getSplittedChunks(tweet, 80);
+      they did not want to "hold back forward progress for nontechnical reasons.`;
+
+    let splittedList = getSplittedChunks(tweet, 80);
     expect(splittedList.map(chunk => {
         let chunkList = chunk.split(' ');
         chunkList.shift();

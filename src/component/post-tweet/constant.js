@@ -1,1 +1,1 @@
-export const MAX_WORD_LENGTH = 80;
+export const MAX_WORD_LENGTH = 50;
