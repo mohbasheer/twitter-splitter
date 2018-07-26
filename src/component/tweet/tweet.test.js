@@ -7,7 +7,9 @@ function setUp(message) {
     return shallow(<Tweet message={message} />);
 }
 
-it('render hello tweet', () => {
-    const wrapper = setUp('hello');
-    expect(wrapper.find('li').text()).toBe('hello');
+describe('Validate Tweet Component', () => {
+    it('should render hello tweet', () => {
+        const wrapper = setUp('hello');
+        expect(wrapper.find('li').text()).toBe('hello');
+    });
 });

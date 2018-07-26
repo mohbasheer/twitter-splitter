@@ -7,7 +7,9 @@ function setUp(tweets) {
     return shallow(<TweetList tweets={tweets} />);
 }
 
-it('render tweet list', () => {
-    const wrapper = setUp([`I can't believe `, `Tweeter now supports chunking`, `my messages, so I don't have to do it myself.`]);
-    expect(wrapper.find('Tweet')).toHaveLength(3);
+describe('Validate TweetList Component', () => {
+    it('should render tweet list', () => {
+        const wrapper = setUp([`I can't believe `, `Tweeter now supports chunking`, `my messages, so I don't have to do it myself.`]);
+        expect(wrapper.find('Tweet')).toHaveLength(3);
+    });
 });

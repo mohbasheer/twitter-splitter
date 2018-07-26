@@ -7,14 +7,16 @@ function setUp(errorMessage) {
     return render(<TweetError error={errorMessage} />);
 }
 
-it('should render given error message', () => {
-    const errorMessage = 'should not be more then 50',
-        wrapper = setUp(errorMessage);
-    expect(wrapper.text()).toBe(errorMessage);
-});
+describe('Validate TweetError Component', () => {
+    it('should render given error message', () => {
+        const errorMessage = 'should not be more then 50',
+            wrapper = setUp(errorMessage);
+        expect(wrapper.text()).toBe(errorMessage);
+    });
 
-it('should render given error message', () => {
-    const wrapper = setUp('');
-    expect(wrapper.hasClass('invisible')).toBeTruthy();
-    expect(wrapper.text()).toBe('');
+    it('should render given error message', () => {
+        const wrapper = setUp('');
+        expect(wrapper.hasClass('invisible')).toBeTruthy();
+        expect(wrapper.text()).toBe('');
+    });
 });
