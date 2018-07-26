@@ -13,14 +13,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@gitlab.com/mohbasheer/twitter-splitter.git"
+    "url": "git+https://github.com/mohbasheer/twitter-splitter.git"
   },
   "author": "Mohammed Basheer <ssp.basheer@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://gitlab.com/mohbasheer/twitter-splitter/issues"
+    "url": "https://github.com/mohbasheer/twitter-splitter/issues"
   },
-  "homepage": "https://gitlab.com/mohbasheer/twitter-splitter#README",
+  "homepage": "https://github.com/mohbasheer/twitter-splitter#readme",
   "dependencies": {
     "babel-polyfill": "^6.26.0",
     "bootstrap": "^4.1.2",
