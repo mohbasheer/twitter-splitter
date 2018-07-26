@@ -20,12 +20,11 @@ export function getPartIndicator(partIndicator) {
  * 
  * @param {*} inputText 
  * @param {*} maxWordLength 
- * @param {*} partIndicator 
  * 
  * return list of chunks
  * 
  */
-export function getChunks(inputText, maxWordLength, partIndicator) {
+export function getChunks(inputText, maxWordLength) {
 
     if (!inputText || inputText === '')
         return [''];
@@ -33,7 +32,8 @@ export function getChunks(inputText, maxWordLength, partIndicator) {
     if (inputText.length <= maxWordLength)
         return [inputText];
 
-    let indicator = getPartIndicator(partIndicator),
+    let partIndicator = arguments[2] || 0,
+        indicator = getPartIndicator(partIndicator),
         tweetList = inputText.split(' '),
         chunks = [],
         noOfChunks = 0,
