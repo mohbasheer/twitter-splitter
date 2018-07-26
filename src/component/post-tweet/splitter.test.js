@@ -4,9 +4,6 @@ import {
     getPartIndicator
 } from './splitter';
 
-function setUp() {
-}
-
 let getRawtext = list =>
     list
         .map(chunk => {

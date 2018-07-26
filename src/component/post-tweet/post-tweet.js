@@ -1,5 +1,5 @@
 import React from 'react';
-import TweetError from './tweet-error';
+import TweetError from '../tweet-error/tweet-error';
 import PropTypes from 'prop-types';
 import { getChunks } from './splitter';
 import { MAX_WORD_LENGTH } from './constant';
