@@ -5,7 +5,7 @@ const Tweet = ({ message }) => {
     return (
         <li className="list-group-item">{message}</li>
     );
-}
+};
 
 Tweet.propTypes = {
     message: PropTypes.string.isRequired

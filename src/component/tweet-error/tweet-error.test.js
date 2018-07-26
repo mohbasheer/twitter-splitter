@@ -4,7 +4,7 @@ import { render } from 'enzyme';
 import TweetError from './tweet-error';
 
 function setUp(errorMessage) {
-    return render(<TweetError error={errorMessage}></TweetError>);
+    return render(<TweetError error={errorMessage} />);
 }
 
 it('should render given error message', () => {

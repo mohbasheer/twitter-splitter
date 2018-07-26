@@ -5,7 +5,7 @@ import PostTweet from './post-tweet';
 
 function setUp() {
     let handlePost = () => { };
-    return shallow(<PostTweet handlePost={handlePost}></PostTweet>);
+    return shallow(<PostTweet handlePost={handlePost} />);
 }
 
 it('isPostValid should return true', () => {
@@ -19,7 +19,7 @@ it('isPostValid should return false', () => {
     const wrapper = setUp(),
         wrapperIns = wrapper.instance();
     wrapper.find('textarea').simulate('change', { target: { value: 'bigggggggggggggggggggggggggggdataaaaaaaaaaaaaaaaaaa' } });
-    expect(wrapperIns.isPostValid()).toBeFalsy()
+    expect(wrapperIns.isPostValid()).toBeFalsy();
 });
 
 it('handlePost should reset the input field', () => {
@@ -35,5 +35,5 @@ it('check error message', () => {
         value = 'bigggggggggggggggggggggggggggdataaaaaaaaaaaaaaaaaaa',
         wrapperIns = wrapper.instance();
     wrapper.find('textarea').simulate('change', { target: { value } });
-    expect(wrapperIns.getErrorMessage()).toBe(`A word can't be more ${50} character "${value}" please split the word`)
+    expect(wrapperIns.getErrorMessage()).toBe(`A word can't be more ${50} character "${value}" please split the word`);
 });

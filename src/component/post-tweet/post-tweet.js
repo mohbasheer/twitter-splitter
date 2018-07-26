@@ -11,7 +11,7 @@ class PostTweet extends React.Component {
         this.state = {
             tweet: '',
             invalidWord: ''
-        }
+        };
         this.handleChange = this.handleChange.bind(this);
         this.handlePost = this.handlePost.bind(this);
     }
@@ -22,7 +22,7 @@ class PostTweet extends React.Component {
                 {},
                 state,
                 { invalidWord }
-            )
+            );
         });
     }
     handleChange(event) {
@@ -34,7 +34,7 @@ class PostTweet extends React.Component {
         this.setState({ tweet: '' });
     }
     getErrorMessage() {
-        return this.isPostValid() ? '' : `A word can't be more ${MAX_WORD_LENGTH} character "${this.state.invalidWord}" please split the word`
+        return this.isPostValid() ? '' : `A word can't be more ${MAX_WORD_LENGTH} character "${this.state.invalidWord}" please split the word`;
     }
     isPostValid() {
         return !this.state.invalidWord;
@@ -43,7 +43,7 @@ class PostTweet extends React.Component {
     render() {
         return (
             <div className="fixed-bottom">
-                <TweetError error={this.getErrorMessage()}></TweetError>
+                <TweetError error={this.getErrorMessage()} />
                 <div className="input-group send-tweet">
                     <textarea className="form-control" onChange={this.handleChange} value={this.state.tweet} />
                     <div className="input-group-append">
@@ -58,6 +58,6 @@ class PostTweet extends React.Component {
 
 PostTweet.propTypes = {
     handlePost: PropTypes.func.isRequired
-}
+};
 
 export default PostTweet;

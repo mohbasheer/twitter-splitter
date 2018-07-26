@@ -9,11 +9,11 @@ export function getPartIndicator(partIndicator) {
     let partIndicatorCounter = 0;
     return {
         next: function () {
-            partIndicatorCounter++
+            partIndicatorCounter++;
             return this;
         },
         getIndicator: () => !partIndicator ? '' : `${partIndicatorCounter}/${partIndicator} `
-    }
+    };
 }
 
 /**

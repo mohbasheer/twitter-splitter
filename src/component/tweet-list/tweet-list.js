@@ -5,13 +5,13 @@ import Tweet from '../tweet/tweet';
 const TweetList = ({ tweets }) => {
     return (
         <ul className="list-group tweet-List">
-            {tweets.map((tweet, index) => <Tweet key={index} message={tweet}></Tweet>)}
+            {tweets.map((tweet, index) => <Tweet key={index} message={tweet} />)}
         </ul>
     );
-}
+};
 
 TweetList.propTypes = {
     tweets: PropTypes.array.isRequired
-}
+};
 
 export default TweetList;

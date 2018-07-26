@@ -9,11 +9,11 @@ const TweetError = ({ error }) => {
             {error}
         </div>
     );
-}
+};
 
 TweetError.propTypes = {
     error: PropTypes.string
-}
+};
 
 
 export default TweetError;

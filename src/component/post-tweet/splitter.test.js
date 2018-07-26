@@ -25,7 +25,7 @@ it('validate getChunks with 91 letters', () => {
     let tweet = `I can't believe Tweeter now supports chunking my messages, so I don't have to do it myself.`,
         splittedList = getChunks(tweet, 50);
     expect(splittedList[0]).toBe(`1/2 I can't believe Tweeter now supports chunking`);
-    expect(splittedList[1]).toBe(`2/2 my messages, so I don't have to do it myself.`)
+    expect(splittedList[1]).toBe(`2/2 my messages, so I don't have to do it myself.`);
     expect(getRawtext(splittedList)).toBe(tweet);
 });
 

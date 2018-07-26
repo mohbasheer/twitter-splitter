@@ -5,6 +5,6 @@ import App from './component/app';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 render(
-    <App></App>,
+    <App />,
     document.getElementById('app')
 );

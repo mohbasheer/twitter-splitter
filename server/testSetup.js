@@ -11,11 +11,11 @@ require.extensions['.css'] = function () { return null; };
 require.extensions['.png'] = function () { return null; };
 require.extensions['.jpg'] = function () { return null; };
 
-var { JSDOM } = require('jsdom');
+let { JSDOM } = require('jsdom');
 
-var exposedProperties = ['window', 'navigator', 'document'];
+let exposedProperties = ['window', 'navigator', 'document'];
 
-var { document } = (new JSDOM('')).window;
+let { document } = (new JSDOM('')).window;
 
 global.document = document;
 global.window = document.defaultView;

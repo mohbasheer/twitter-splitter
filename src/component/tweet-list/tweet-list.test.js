@@ -4,7 +4,7 @@ import { shallow } from 'enzyme';
 import TweetList from './tweet-list';
 
 function setUp(tweets) {
-    return shallow(<TweetList tweets={tweets}></TweetList>);
+    return shallow(<TweetList tweets={tweets} />);
 }
 
 it('render tweet list', () => {

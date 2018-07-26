@@ -8,7 +8,7 @@ class App extends React.Component {
         super();
         this.state = {
             tweets: ["abc", "abc12", "ab1c", "11abc", 'aaxx']
-        }
+        };
         this.handlePost = this.handlePost.bind(this);
     }
     handlePost(tweet) {
@@ -18,8 +18,8 @@ class App extends React.Component {
         const tweets = [...this.state.tweets];
         return (
             <div>
-                <TweetList tweets={tweets}></TweetList>
-                <PostTweet handlePost={this.handlePost}></PostTweet>
+                <TweetList tweets={tweets} />
+                <PostTweet handlePost={this.handlePost} />
             </div>
         );
     }
