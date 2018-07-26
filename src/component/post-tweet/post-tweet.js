@@ -1,7 +1,7 @@
 import React from 'react';
 import TweetError from './tweet-error';
 import PropTypes from 'prop-types';
-import { getSplittedChunks } from './splitter';
+import { getChunks } from './splitter';
 import { MAX_WORD_LENGTH } from './constant';
 
 
@@ -30,11 +30,11 @@ class PostTweet extends React.Component {
         this.validateTweetMessage();
     }
     handlePost() {
-        this.props.handlePost(getSplittedChunks(this.state.tweet, MAX_WORD_LENGTH));
+        this.props.handlePost(getChunks(this.state.tweet, MAX_WORD_LENGTH));
         this.setState({ tweet: '' });
     }
     getErrorMessage() {
-        return this.isPostValid() ? '' : `A word cant be more ${MAX_WORD_LENGTH} character "${this.state.invalidWord}" please split the word`
+        return this.isPostValid() ? '' : `A word can't be more ${MAX_WORD_LENGTH} character "${this.state.invalidWord}" please split the word`
     }
     isPostValid() {
         return !this.state.invalidWord;
