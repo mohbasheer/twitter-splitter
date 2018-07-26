@@ -26,6 +26,7 @@ export function getPartIndicator(partIndicator) {
  * 
  */
 export function getChunks(inputText, maxWordLength, partIndicator) {
+
     if (!inputText || inputText === '')
         return [''];
 
@@ -37,7 +38,11 @@ export function getChunks(inputText, maxWordLength, partIndicator) {
         chunks = [],
         noOfChunks = 0,
         count = indicator.getIndicator().length,
-        preIndex = 0;
+        preIndex = 0,
+        getChunk = (startIndex, endIndex) => {
+            endIndex = endIndex === tweetList.length - 1 ? endIndex + 1 : endIndex;
+            return `${indicator.getIndicator()}${tweetList.slice(startIndex, endIndex).join(' ')}`;
+        };
 
     tweetList.forEach((tweet, index) => {
         let spaceLength = (index > 0 && index < (tweetList.length - 1)) ? 1 : 0;
@@ -45,16 +50,17 @@ export function getChunks(inputText, maxWordLength, partIndicator) {
         if (count === maxWordLength) {
             noOfChunks++;
             count = indicator.next().getIndicator().length + -1;// adjusting previously added space
-            chunks.push(`${indicator.getIndicator()}${tweetList.slice(preIndex, index).join(' ')}`);
+            chunks.push(getChunk(preIndex, index));
             preIndex = index;
         } else if (count > maxWordLength) {
             noOfChunks++;
             count = indicator.next().getIndicator().length + tweet.length;
-            chunks.push(`${indicator.getIndicator()}${tweetList.slice(preIndex, index).join(' ')}`);
+            chunks.push(getChunk(preIndex, index));
             preIndex = index;
         } else if (index === tweetList.length - 1) {
             noOfChunks++;
-            chunks.push(`${indicator.next().getIndicator()}${tweetList.slice(preIndex).join(' ')}`);
+            indicator.next();
+            chunks.push(getChunk(preIndex, index));
         }
     });
 

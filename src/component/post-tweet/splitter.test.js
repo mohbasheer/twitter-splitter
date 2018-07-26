@@ -1,4 +1,6 @@
 import expect from 'expect';
+import { MAX_WORD_LENGTH } from './constant';
+
 import {
     getChunks,
     getPartIndicator
@@ -14,16 +16,16 @@ let getRawtext = list =>
         .join(' ');
 
 it('validate getChunks with 0 letters', () => {
-    expect(getChunks('', 50).toString()).toBe('');
+    expect(getChunks('', MAX_WORD_LENGTH).toString()).toBe('');
 });
 
 it('validate getChunks with 5 letters', () => {
-    expect(getChunks('hello', 50).toString()).toBe('hello');
+    expect(getChunks('hello', MAX_WORD_LENGTH).toString()).toBe('hello');
 });
 
 it('validate getChunks with 91 letters', () => {
     let tweet = `I can't believe Tweeter now supports chunking my messages, so I don't have to do it myself.`,
-        splittedList = getChunks(tweet, 50);
+        splittedList = getChunks(tweet, MAX_WORD_LENGTH);
     expect(splittedList[0]).toBe(`1/2 I can't believe Tweeter now supports chunking`);
     expect(splittedList[1]).toBe(`2/2 my messages, so I don't have to do it myself.`);
     expect(getRawtext(splittedList)).toBe(tweet);
@@ -42,6 +44,6 @@ it('validate getChunks with 1078 letters', () => {
       "the foundation of a broad ecosystem of open source software for the web", and that 
       they did not want to "hold back forward progress for nontechnical reasons.`;
 
-    let splittedList = getChunks(tweet, 50);
+    let splittedList = getChunks(tweet, MAX_WORD_LENGTH);
     expect(getRawtext(splittedList)).toBe(tweet);
 });

@@ -2,6 +2,7 @@ import expect from 'expect';
 import React from 'react';
 import { shallow } from 'enzyme';
 import PostTweet from './post-tweet';
+import { MAX_WORD_LENGTH } from './constant';
 
 function setUp() {
     let handlePost = () => { };
@@ -35,5 +36,5 @@ it('check error message', () => {
         value = 'bigggggggggggggggggggggggggggdataaaaaaaaaaaaaaaaaaa',
         wrapperIns = wrapper.instance();
     wrapper.find('textarea').simulate('change', { target: { value } });
-    expect(wrapperIns.getErrorMessage()).toBe(`A word can't be more ${50} character "${value}" please split the word`);
+    expect(wrapperIns.getErrorMessage()).toBe(`A word can't be more ${MAX_WORD_LENGTH} character "${value}" please split the word`);
 });
